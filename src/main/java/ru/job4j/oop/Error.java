@@ -6,9 +6,6 @@ public class Error {
     private String message;
 
     public Error() {
-        this.message = "Deafault";
-        this.status = 1;
-        this.active = true;
     }
 
     public Error(boolean active, int status, String message) {
