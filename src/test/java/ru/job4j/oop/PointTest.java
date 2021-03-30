@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 
 public class PointTest extends TestCase {
-
     public void testDistance3d() {
 
         Point first = new Point(1, 1, 1);
