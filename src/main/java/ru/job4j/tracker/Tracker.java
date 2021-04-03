@@ -32,7 +32,7 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        Item[] newItems = new Item[items.length];
+        Item[] newItems = new Item[size];
         int count = 0;
         for (int i = 0; i < size; i++) {
             Item name = items[i];
@@ -41,7 +41,7 @@ public class Tracker {
                 count++;
             }
         }
-        return Arrays.copyOf(newItems, size);
+        return Arrays.copyOf(newItems, count);
     }
 
     private int indexOf(int id) {
