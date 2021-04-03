@@ -22,7 +22,7 @@ public class StartUI {
                 Item[] newItem = tracker.findAll();
                 for (Item i
                         : newItem) {
-                    System.out.println(i.toString());
+                    System.out.println(i);
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
@@ -31,7 +31,6 @@ public class StartUI {
                 System.out.print("Enter the name of the new application: ");
                 String nameApl = scanner.nextLine();
                 Item item = new Item(nameApl);
-                tracker.replace(numId, item);
                 if (tracker.replace(numId, item)) {
                     System.out.println("Mission accomplished");
                 } else {
@@ -53,7 +52,7 @@ public class StartUI {
                 int numId = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(numId);
                 if (!isNull(item)) {
-                    System.out.println("Mission accomplished : " + item.toString());
+                    System.out.println("Mission accomplished : " + item);
                 } else {
                     System.out.println("Id not found");
                 }
