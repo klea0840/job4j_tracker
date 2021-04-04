@@ -67,6 +67,15 @@ public class StartUI {
         }
     }
 
+//    public static void replaceItem(Input input, Tracker tracker) {
+//        System.out.println(" === Update item ====");
+//        int id = input.askInt("Enter id:");
+//        String name = input.askStr("Enter a new name of item: ");
+//        Item item = new Item(name);
+//        item.setId(id);
+//        tracker.replace(id, item);
+//    }
+
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {

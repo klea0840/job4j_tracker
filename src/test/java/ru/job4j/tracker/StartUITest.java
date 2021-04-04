@@ -18,4 +18,35 @@ public class StartUITest extends TestCase {
         Item expected = new Item("Item2");
         assertThat(created.getName(), is(expected.getName()));
     }
+
+
+    public void testEditItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        Item item2 = new Item("news item");
+        tracker.add(item);
+        tracker.add(item2);
+        String[] answers = {
+                String.valueOf(item2.getId()), /* id сохраненной заявки в объект tracker. */
+                String.valueOf(item.getName()), /* id сохраненной заявки в объект tracker. */
+        };
+        StartUI.editItem(new StubInput(answers), tracker);
+        Item replaced = tracker.findById(item2.getId());
+        assertThat(replaced.getName(), is(item.getName()));
+    }
+
+
+    public void testDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        Item item2 = new Item("news item");
+        tracker.add(item);
+        tracker.add(item2);
+        String[] answers = {
+                String.valueOf(item2.getId()), /* id сохраненной заявки в объект tracker. */
+        };
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        Item deleted = tracker.findById(item2.getId());
+        assertNull(deleted);
+    }
 }
