@@ -39,14 +39,14 @@ public class StartUITest {
     public void testDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("new item");
-        Item newIitem = new Item("news item");
+        Item newsItem = new Item("news item");
         tracker.add(item);
-        tracker.add(newIitem);
+        tracker.add(newsItem);
         String[] answers = {
-                String.valueOf(newIitem.getId()), /* id сохраненной заявки в объект tracker. */
+                String.valueOf(newsItem.getId()), /* id сохраненной заявки в объект tracker. */
         };
         StartUI.deleteItem(new StubInput(answers), tracker);
-        Item deleted = tracker.findById(newIitem.getId());
+        Item deleted = tracker.findById(newsItem.getId());
         assertNull(deleted);
     }
 }
