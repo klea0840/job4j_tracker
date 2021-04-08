@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class DeleteItem implements UserAction {
+    private final Output out;
+
+    public DeleteItem(Output out) {
+        this.out = out;
+    }
+
     @Override
     public String name() {
         return "Delete Item";
@@ -8,13 +14,13 @@ public class DeleteItem implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Delete item ====");
+        out.println("=== Delete item ====");
         int numId = input.askInt("Enter id: ");
         boolean del = tracker.delete(numId);
         if (del) {
-            System.out.println("Mission accomplished");
+            out.println("Mission accomplished");
         } else {
-            System.out.println("Id not found");
+            out.println("Id not found");
         }
         return true;
     }

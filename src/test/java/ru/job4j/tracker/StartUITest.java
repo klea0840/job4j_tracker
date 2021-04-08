@@ -82,7 +82,7 @@ public class StartUITest {
                 new String[] {"0", item.getName(), "1"}
         );
                 UserAction[] actions = {
-                new FindByNameItem(),
+                new FindByNameItem(out),
                         new ExitItem()
         };
         new StartUI(out).init(in, tracker, actions);
@@ -90,6 +90,8 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find by name" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
+                        + "=== Find by name ====" + System.lineSeparator()
+                        + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator() +
                         "0. Find by name" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
@@ -105,7 +107,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
-                new FindByIdItem(),
+                new FindByIdItem(out),
                 new ExitItem()
         };
         new StartUI(out).init(in, tracker, actions);
@@ -113,6 +115,8 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Find by id" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
+                        + "=== Find by id ====" + System.lineSeparator()
+                        + "Mission accomplished : " + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator() +
                         "0. Find by id" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
@@ -128,7 +132,7 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         UserAction[] actions = {
-                new ShowItem(),
+                new ShowItem(out),
                 new ExitItem()
         };
         new StartUI(out).init(in, tracker, actions);
@@ -136,6 +140,8 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. Show item" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
+                        + "=== Show item ====" + System.lineSeparator()
+                        + item + System.lineSeparator()
                         + "Menu." + System.lineSeparator() +
                         "0. Show item" + System.lineSeparator()
                         + "1. Exit" + System.lineSeparator()
