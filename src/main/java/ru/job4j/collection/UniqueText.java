@@ -9,11 +9,12 @@ public class UniqueText {
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
         for (String original : origin) {
-            check.add(original);
+            check.add(original.toLowerCase());
         }
         for (String texts : text) {
-            if (check.contains(texts)) {
+            if (check.contains(texts.toLowerCase())) {
                 rsl = true;
+                break;
             }
         }
         /* for-each origin -> new HashSet. */
