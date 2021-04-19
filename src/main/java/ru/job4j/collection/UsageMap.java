@@ -8,7 +8,7 @@ public class UsageMap {
         newMap.put("123456@gmail.com", "Ivanov Ivan Ivanovich");
         for (String key : newMap.keySet()) {
             System.out.println("key: " + key + System.lineSeparator()
-                                    + "value: " + newMap.get(key));
+                                + "value: " + newMap.get(key));
         }
     }
 }
