@@ -23,8 +23,8 @@ public class PassportOfficeTest {
         PassportOffice office = new PassportOffice();
         office.add(citizen);
         office.add(citizenNext);
+        office.add(citizenNext);
         office.add(citizenNext2);
-        Citizen found = office.get("2f45a");
-        assertThat(found, is(citizenNext));
+        assertFalse(office.add(citizen));
     }
 }
