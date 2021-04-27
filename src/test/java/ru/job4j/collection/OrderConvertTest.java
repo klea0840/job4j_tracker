@@ -19,17 +19,17 @@ public class OrderConvertTest {
     }
 
     @Test
-    public void whenDubOrder() {
+    public void whenDubOrderBySize() {
         List<Order> orders = new ArrayList<>();
         Order newOrder = new Order("3sfe", "Dress");
         orders.add(newOrder);
         orders.add(newOrder);
         HashMap<String, Order> map = OrderConvert.process(orders);
-        assertThat(map.get("3sfe"), is(newOrder));
+        assertThat(map.size(), is(1));
     }
 
     @Test
-    public void whenDubleOrder() {
+    public void whenDubleOrderByValue() {
         List<Order> orders = new ArrayList<>();
         Order newOrder = new Order("3sfe", "Dress");
         Order newOrderNext = new Order("3sfe", "Pants");
