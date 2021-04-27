@@ -21,8 +21,21 @@ public class OrderConvertTest {
     @Test
     public void whenDubOrder() {
         List<Order> orders = new ArrayList<>();
-        orders.add(new Order("3sfe", "Dress"));
+        Order newOrder = new Order("3sfe", "Dress");
+        orders.add(newOrder);
+        orders.add(newOrder);
         HashMap<String, Order> map = OrderConvert.process(orders);
-        assertThat(map.get("3sfe"), is(new Order("3sfe", "Dress")));
+        assertThat(map.get("3sfe"), is(newOrder));
+    }
+
+    @Test
+    public void whenDubleOrder() {
+        List<Order> orders = new ArrayList<>();
+        Order newOrder = new Order("3sfe", "Dress");
+        Order newOrderNext = new Order("3sfe", "Pants");
+        orders.add(newOrder);
+        orders.add(newOrderNext);
+        HashMap<String, Order> map = OrderConvert.process(orders);
+        assertThat(map.get("3sfe"), is(newOrderNext));
     }
 }
