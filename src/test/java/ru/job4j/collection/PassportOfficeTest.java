@@ -27,4 +27,12 @@ public class PassportOfficeTest {
         office.add(citizenNext2);
         assertFalse(office.add(citizen));
     }
+
+    @Test
+    public void whenRepeatedElements() {
+        Citizen citizen = new Citizen("2f44a", "Petr Arsentev");
+        PassportOffice office = new PassportOffice();
+        office.add(citizen);
+        assertFalse(office.add(citizen));
+    }
 }
