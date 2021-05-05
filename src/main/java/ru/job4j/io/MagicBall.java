@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class MagicBall {
     public static void main(String[] args) {
         System.out.println("Попугай Кеша предсказывает будущее, но знает он всего 2 слова, "
-               + System.lineSeparator() + "поэтому Ваш вопрос должен начинаться со слова <Будет...?>." + System.lineSeparator()
+               + System.lineSeparator()
+                + "поэтому Ваш вопрос должен начинаться со слова <Будет...?>."
+                + System.lineSeparator()
                 + "Введите вопрос.");
         Scanner sc = new Scanner(System.in);
         String question = sc.nextLine();
