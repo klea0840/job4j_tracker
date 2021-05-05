@@ -10,8 +10,9 @@ public class PointTest {
         Point first = new Point(1, 1, 1);
         Point second = new Point(2, 2, 3);
         double rsl = first.distance3d(second);
-        Assert.assertEquals(2.45,rsl, 0.01);
+        Assert.assertEquals(2.45, rsl, 0.01);
     }
+
     @Test
     public void testDistance1() {
         Point first = new Point(1, 1);
@@ -19,6 +20,7 @@ public class PointTest {
         double rsl = first.distance(second);
         Assert.assertEquals(2.828, rsl, 0.01);
     }
+
     @Test
     public void testDistance2() {
         Point first = new Point(-1, -15);

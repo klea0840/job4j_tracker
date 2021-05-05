@@ -44,11 +44,9 @@ public class Item implements Comparable<Item> {
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy HH:mm:ss");
         String x = created.format(formatter);
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created=" + x +
-                '}';
+        return "Item{"
+                + "id=" + id + ", name='" + name + '\''
+                + ", created=" + x + '}';
     }
 
     @Override
