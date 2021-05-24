@@ -21,7 +21,8 @@ public class LambdaUsage {
         };
         Comparator<Attachment> attachmentComparatorByLength =
                 (left, right) -> {
-                    System.out.println("comparing " + right.getName().length()
+                    System.out.println("comparing "
+                            + right.getName().length()
                             + " and " + left.getName().length());
                     return right.getName().length() - left.getName().length();
                 };
