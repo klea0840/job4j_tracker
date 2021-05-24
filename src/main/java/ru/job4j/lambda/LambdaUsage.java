@@ -21,10 +21,28 @@ public class LambdaUsage {
         };
         Comparator<Attachment> attachmentComparatorByLength =
                 (left, right) -> {
+                    System.out.println("comparing " + right.getName().length()
+                            + " and " + left.getName().length());
                     return right.getName().length() - left.getName().length();
                 };
         attachments.sort(attachmentComparatorByLength);
         System.out.println(attachments);
         System.out.println();
+
+//*2.5. Ленивая загрузка [#249211]
+        String[] names1 = {
+                "Ivan",
+        };
+        Comparator<String> lengthCmp = (left, right) -> {
+            System.out.println("execute comparator");
+            return left.length() - right.length();
+        };
+        Arrays.sort(names1, lengthCmp);
+        String[] names2 = {
+                "Ivan",
+                "Petr"
+        };
+
+        Arrays.sort(names2, lengthCmp);
     }
 }
