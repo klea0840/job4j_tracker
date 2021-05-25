@@ -22,9 +22,9 @@ public class LambdaUsage {
         Comparator<Attachment> attachmentComparatorByLength =
                 (left, right) -> {
                     System.out.println("comparing "
-                            + right.getName().length()
-                            + " and " + left.getName().length());
-                    return right.getName().length() - left.getName().length();
+                            + left.getName().length()
+                            + " and " + right.getName().length());
+                    return Integer.compare(left.getName().length(), right.getName().length());
                 };
         attachments.sort(attachmentComparatorByLength);
         System.out.println(attachments);
