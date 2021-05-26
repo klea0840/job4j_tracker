@@ -29,12 +29,14 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> findLambda(String key) {
-        Predicate<Person> combine = (personSearch) -> {
-            return personSearch.getName().contains(key)
-                    || personSearch.getPhone().contains(key)
-                    || personSearch.getAddress().contains(key)
-                    || personSearch.getSurname().contains(key);
-        };
+        Predicate<Person> checkName = (personSearch) -> personSearch.getName().contains(key);
+        Predicate<Person> checkSurname = (personSearch) -> personSearch.getSurname().contains(key);
+        Predicate<Person> checkAddress = (personSearch) -> personSearch.getAddress().contains(key);
+        Predicate<Person> checkPhone = (personSearch) -> personSearch.getPhone().contains(key);
+        Predicate<Person> combine = (personSearch) -> checkName.
+                or(checkSurname).
+                or(checkAddress).
+                or(checkPhone).test(personSearch);
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
             if (combine.test(person)) {
