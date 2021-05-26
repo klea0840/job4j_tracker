@@ -1,8 +1,10 @@
 package ru.job4j.lambda;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 public class LambdaUsage {
     public static void main(String[] args) {
@@ -45,5 +47,14 @@ public class LambdaUsage {
         };
 
         Arrays.sort(names2, lengthCmp);
+    }
+
+    //*5. Подсчет функции в диапазоне. [#24251]
+    static List<Double> diapason(int start, int end, Function<Double, Double> func) {
+        List<Double> doubleList = new ArrayList<>();
+        for (int i = start; i < end; i++) {
+            doubleList.add(func.apply((double) i));
+        }
+        return doubleList;
     }
 }
