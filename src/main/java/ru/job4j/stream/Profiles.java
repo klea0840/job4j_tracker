@@ -24,7 +24,7 @@ public class Profiles {
                 Profile::getAddress
         )
                 .distinct()
-                .sorted()
+                .sorted(Comparator.comparing(Address::getCity))
                 .collect(Collectors.toList());
     }
 }
