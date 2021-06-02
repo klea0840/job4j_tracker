@@ -44,14 +44,20 @@ public class BankService {
      * @return возвращает пользователя или null, если пользователь не найден
      */
     public User findByPassport(String passport) {
-        User foundUser = null;
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                foundUser = user;
-                break;
-            }
-        }
-        return foundUser;
+        return users.keySet()
+                .stream()
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
+
+//        User foundUser = null;
+//        for (User user : users.keySet()) {
+//            if (user.getPassport().equals(passport)) {
+//                foundUser = user;
+//                break;
+//            }
+//        }
+//        return foundUser;
     }
 
     /**
@@ -61,16 +67,25 @@ public class BankService {
      * @return возвращает счет пользователя или null, если счет отсутствует
      */
     public Account findByRequisite(String passport, String requisite) {
-        List<Account> accounts = users.get(findByPassport(passport));
-        Account foundAccount = null;
-        if (!isNull(accounts)) {
-            for (Account account : accounts) {
-                if (account.getRequisite().equals(requisite)) {
-                    foundAccount = account;
-                }
-            }
+        User user = findByPassport(passport);
+        if (user != null) {
+            return users.get(user)
+                    .stream()
+                    .filter(s -> s.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
-        return foundAccount;
+        return null;
+//        List<Account> accounts = users.get(findByPassport(passport));
+//        Account foundAccount = null;
+//        if (!isNull(accounts)) {
+//            for (Account account : accounts) {
+//                if (account.getRequisite().equals(requisite)) {
+//                    foundAccount = account;
+//                }
+//            }
+//        }
+//        return foundAccount;
     }
 
     /**
