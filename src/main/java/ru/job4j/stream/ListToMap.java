@@ -11,12 +11,7 @@ public class ListToMap {
                 Collectors.toMap(
                         Student::getSurname,
                         s -> s,
-                        (element, dublicate) -> {
-                            if (!element.equals(dublicate)) {
-                                list.add(element);
-                            }
-                            return element;
-                        }
+                        (element, dublicate) -> element
                 ));
     }
 }
