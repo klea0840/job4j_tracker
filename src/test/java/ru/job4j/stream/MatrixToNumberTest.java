@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-public class MatrixToNumberTest{
+public class MatrixToNumberTest {
     @Test
     public void testSwitchToList() {
         List<List<Integer>> matrix = List.of(
