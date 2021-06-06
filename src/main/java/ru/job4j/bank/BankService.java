@@ -49,14 +49,6 @@ public class BankService {
                 .stream()
                 .filter(u -> u.getPassport().equals(passport))
                 .findFirst();
-//        User foundUser = null;
-//        for (User user : users.keySet()) {
-//            if (user.getPassport().equals(passport)) {
-//                foundUser = user;
-//                break;
-//            }
-//        }
-//        return foundUser;
     }
 
     /**
@@ -74,17 +66,6 @@ public class BankService {
                     .findFirst();
         }
         return Optional.empty();
-
-//        List<Account> accounts = users.get(findByPassport(passport));
-//        Account foundAccount = null;
-//        if (!isNull(accounts)) {
-//            for (Account account : accounts) {
-//                if (account.getRequisite().equals(requisite)) {
-//                    foundAccount = account;
-//                }
-//            }
-//        }
-//        return foundAccount;
     }
 
     /**
