@@ -48,4 +48,31 @@ public class DepartmentsTest {
         Departments.sortAsc(input);
         assertThat(input.get(input.size() - 1), is("k2/sk1/ssk2"));
     }
+
+    @Test
+    public void whenDesOrderHavoc() {
+        List<String> input = Arrays.asList(
+                "k2/sk1/ssk1", "k1/sk1/ssk2", "k1/sk1",
+                "k2", "k1", "k2/sk1",
+                "k1/sk1/ssk1", "k2/sk1/ssk2", "k1/sk2");
+        List<String> expected = Arrays.asList(
+                "k2", "k2/sk1", "k2/sk1/ssk1", "k2/sk1/ssk2", "k1", "k1/sk1",
+                "k1/sk1/ssk1", "k1/sk1/ssk2", "k1/sk2");
+        Departments.sortDesc(input);
+        assertEquals(expected, input);
+    }
+
+    @Test
+    public void whenAcsOrderHavoc() {
+        List<String> input = Arrays.asList(
+                "k2/sk1/ssk1", "k1/sk1/ssk2", "k1/sk1",
+                "k2", "k1", "k2/sk1",
+                "k1/sk1/ssk1", "k2/sk1/ssk2", "k1/sk2");
+        List<String> expected = Arrays.asList(
+                "k1", "k1/sk1",
+                "k1/sk1/ssk1", "k1/sk1/ssk2", "k1/sk2",
+                "k2", "k2/sk1", "k2/sk1/ssk1", "k2/sk1/ssk2");
+        Departments.sortAsc(input);
+        assertEquals(expected, input);
+    }
 }
