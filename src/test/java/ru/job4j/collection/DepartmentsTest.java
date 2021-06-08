@@ -25,10 +25,12 @@ public class DepartmentsTest {
     }
 
     @Test
-    public void whenDesOrder3() {
-        List<String> input = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1", "k2/k1");
+    public void whenDesOrderTask() {
+        List<String> input = Arrays.asList(
+                "k2", "k2/sk1", "k2/sk1/ssk1", "k2/sk1/ssk2", "k1", "k1/sk1",
+                "k1/sk1/ssk1", "k1/sk1/ssk2", "k1/sk2");
         Departments.sortDesc(input);
-        assertThat(input.get(3), is("k1"));
+        assertThat(input.get(input.size() - 1), is("k1/sk2"));
     }
 
     @Test
@@ -39,9 +41,11 @@ public class DepartmentsTest {
     }
 
     @Test
-    public void whenAcsOrder4() {
-        List<String> input = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1", "k2/k1");
+    public void whenAcsOrderTask() {
+        List<String> input = Arrays.asList(
+                "k2", "k2/sk1", "k2/sk1/ssk1", "k2/sk1/ssk2", "k1", "k1/sk1",
+                "k1/sk1/ssk1", "k1/sk1/ssk2", "k1/sk2");
         Departments.sortAsc(input);
-        assertThat(input.get(1), is("k1/sk1"));
+        assertThat(input.get(input.size() - 1), is("k2/sk1/ssk2"));
     }
 }

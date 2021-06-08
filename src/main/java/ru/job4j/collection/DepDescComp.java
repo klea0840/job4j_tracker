@@ -7,7 +7,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DepDescComp implements Comparator<String> {
-    /**
+    /**The method takes 2 strings, converts them into arrays and
+     * compares
      * @param o1  - String for comparison
      * @param o2- String for comparison
      * @return - result of comparison
@@ -16,9 +17,7 @@ public class DepDescComp implements Comparator<String> {
     public int compare(String o1, String o2) {
         String[] stringO1 = o1.split("/");
         String[] stringO2 = o2.split("/");
-        if (stringO2[0].compareTo(stringO1[0]) == 0) {
-            return Arrays.compare(stringO1, stringO2, Comparator.naturalOrder());
-        }
-        return Arrays.compare(stringO1, stringO2, Comparator.reverseOrder());
+        int rsl = stringO2[0].compareTo(stringO1[0]);
+        return (rsl == 0) ? o1.compareTo(o2) : rsl;
     }
 }
