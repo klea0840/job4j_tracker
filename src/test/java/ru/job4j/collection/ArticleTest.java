@@ -74,4 +74,15 @@ public class ArticleTest {
                 is(false)
         );
     }
+
+    @Test
+    public void whenNull() {
+        assertThat(
+                Article.generateBy(
+                        null,
+                        "мыла пол"
+                ),
+                is(false)
+        );
+    }
 }
