@@ -29,8 +29,7 @@ public class FreezeStr {
         } else {
             for (var v: leftStringMap.keySet()) {
                 if ((!rightStringMap.containsKey(v))
-                        || (rightStringMap.containsKey(v)
-                        && rightStringMap.get(v) != (leftStringMap.get(v)))) {
+                        || (rightStringMap.get(v) != (leftStringMap.get(v)))) {
                     return false;
                 }
             }
