@@ -1,7 +1,6 @@
 package ru.job4j.collection;
 
 import java.util.HashMap;
-import java.util.List;
 
 import static java.util.Objects.isNull;
 
