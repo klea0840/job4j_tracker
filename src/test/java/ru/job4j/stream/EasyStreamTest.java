@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class EasyStreamTest {
-
     @Test
     public void whenEmptySource() {
         var rsl = EasyStream.of(List.of()).collect();

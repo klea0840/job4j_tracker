@@ -12,10 +12,6 @@ public class EasyStream {
         this.source = source;
         }
 
-    public List<Integer> getSource() {
-        return this.source;
-    }
-
     public static EasyStream of(List<Integer> source) {
         return new EasyStream(source);
     }
@@ -39,6 +35,6 @@ public class EasyStream {
     }
 
     public List<Integer> collect() {
-        return new EasyStream(this.source).getSource();
+        return this.source;
     }
 }
